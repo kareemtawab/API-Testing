@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "d859d92d-48dc-4bb2-bfcd-44cf08eb7aba",
+		"name": "Get organizations for a member",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18045904"
+	},
+	"item": [
+		{
+			"name": "Get organizations for a member",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get organizationIds\", function () {\r",
+							"    console.log(pm.response.json().idOrganizations);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{baseUrl}}/{{requestUrl}}?key={{personalKey}}&token={{token}}",
+					"protocol": "https",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{requestUrl}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{personalKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "requestUrl",
+			"value": "1/members/me",
+			"type": "string"
+		}
+	]
+}

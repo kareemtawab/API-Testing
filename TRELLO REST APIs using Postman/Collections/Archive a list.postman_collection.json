@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "8cc20d98-9ce9-461b-a7f8-98f3862acc5b",
+		"name": "Archive a list",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18045904"
+	},
+	"item": [
+		{
+			"name": "Archive a list",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://{{baseUrl}}/{{requestUrl}}?key={{personalKey}}&token={{token}}&value=true",
+					"protocol": "https",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{requestUrl}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{personalKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "value",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "requestUrl",
+			"value": "1/lists/{{listIdEnv}}/closed",
+			"type": "string"
+		}
+	]
+}

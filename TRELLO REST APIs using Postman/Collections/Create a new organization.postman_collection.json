@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "602f5b2b-8085-43d2-80ef-d305c872c3b9",
+		"name": "Create a new organization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18045904"
+	},
+	"item": [
+		{
+			"name": "Create a new organization and obtain",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Set organizationId collection and environment variable\", function () {\r",
+							"    console.log(pm.response.json().id);\r",
+							"    pm.collectionVariables.set(\"organizationId\", pm.response.json().id);\r",
+							"    pm.environment.set(\"organizationIdEnv\", pm.response.json().id);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{baseUrl}}/{{requestUrl}}?displayName=kareemorganization&key={{personalKey}}&token={{token}}",
+					"protocol": "https",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{requestUrl}}"
+					],
+					"query": [
+						{
+							"key": "displayName",
+							"value": "kareemorganization"
+						},
+						{
+							"key": "key",
+							"value": "{{personalKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "requestUrl",
+			"value": "1/organizations",
+			"type": "string"
+		},
+		{
+			"key": "organizationId",
+			"value": ""
+		}
+	]
+}
