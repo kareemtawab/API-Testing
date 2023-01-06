@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "a53b4a5e-9fcb-4995-880c-7f311aabe2a6",
+		"name": "Unarchive a list",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18045904"
+	},
+	"item": [
+		{
+			"name": "Unarchive a list",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://{{baseUrl}}/{{requestUrl}}?key={{personalKey}}&token={{token}}&value=false",
+					"protocol": "https",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{{requestUrl}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{personalKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "value",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "requestUrl",
+			"value": "1/lists/{{listIdEnv}}/closed",
+			"type": "string"
+		}
+	]
+}

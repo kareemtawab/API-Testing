@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Create a new organization and obtain",
+			"name": "Create a new organization",
 			"event": [
 				{
 					"listen": "test",
